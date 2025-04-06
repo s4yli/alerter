@@ -1,0 +1,11 @@
+---
+subject: Alerte sur un événement
+---
+
+Un événement a été {{ if .IsNew }}créé{{ else }}modifié{{ end }} :
+- ID : {{ .Event.Id }}
+- Début : {{ formatDate .Event.Dtstart }}
+- Fin : {{ formatDate .Event.Dtend }}
+- Lieu : {{ .Event.Location }}
+- Description :
+{{ cleanDescription .Event.Description }}
